@@ -18,18 +18,14 @@ steamcmd +login anonymous \
  +app_update 376030 validate \
  +quit
 
-# Backups toutes les 6 heures
+# Backup toutes les 6h
 (crontab -l 2>/dev/null; echo "0 */6 * * * /backup.sh") | crontab -
 cron
-
-echo "▶ Starting ARK Map: ${MAP}"
 
 cd /ark/ShooterGame/Binaries/Linux
 
 ./ShooterGameServer \
   ${MAP}?SessionName=${SESSION_NAME}?Port=${PORT}?QueryPort=${QUERY_PORT}?RCONPort=${RCON_PORT}?ServerAdminPassword=${ADMIN_PASSWORD}?ClusterId=${CLUSTER_ID}?AltSaveDirectoryName=${MAP} \
-  -server \
-  -log \
-  -USEALLAVAILABLECORES \
+  -server -log -USEALLAVAILABLECORES \
   -clusterid=${CLUSTER_ID} \
   -ClusterDirOverride=/arkcluster
