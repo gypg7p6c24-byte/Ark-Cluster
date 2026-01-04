@@ -1,14 +1,12 @@
 services:
 
   ark-island:
-    platform: linux/amd64
     build: .
-    profiles: ["optional"]
-    container_name: ark-island
+    image: ark-island
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "0"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: TheIsland
       SESSION_NAME: ARK-TheIsland
@@ -21,21 +19,14 @@ services:
       - ./data/island:/ark
       - ./data/cluster:/arkcluster
       - ./data/backups:/backups
-    ports:
-      - "7777:7777/udp"
-      - "7778:7778/udp"
-      - "27015:27015/udp"
-      - "27020:27020/tcp"
     restart: unless-stopped
 
   ark-scorched:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "1"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: ScorchedEarth_P
       SESSION_NAME: ARK-Scorched
@@ -52,12 +43,10 @@ services:
 
   ark-aberration:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "2"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Aberration_P
       SESSION_NAME: ARK-Aberration
@@ -74,12 +63,10 @@ services:
 
   ark-extinction:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "3"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Extinction
       SESSION_NAME: ARK-Extinction
@@ -96,12 +83,10 @@ services:
 
   ark-ragnarok:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "4"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Ragnarok
       SESSION_NAME: ARK-Ragnarok
@@ -118,12 +103,10 @@ services:
 
   ark-valguero:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "5"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Valguero_P
       SESSION_NAME: ARK-Valguero
@@ -140,12 +123,10 @@ services:
 
   ark-crystal:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "6"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: CrystalIsles
       SESSION_NAME: ARK-CrystalIsles
@@ -162,12 +143,10 @@ services:
 
   ark-lostisland:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "7"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: LostIsland
       SESSION_NAME: ARK-LostIsland
@@ -184,12 +163,10 @@ services:
 
   ark-fjordur:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "8"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Fjordur
       SESSION_NAME: ARK-Fjordur
@@ -206,12 +183,10 @@ services:
 
   ark-gen1:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "9"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Genesis
       SESSION_NAME: ARK-Genesis1
@@ -228,12 +203,10 @@ services:
 
   ark-gen2:
     image: ark-island
-    platform: linux/amd64
-    profiles: ["optional"]
+    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "10"
     mem_limit: 10g
-    memswap_limit: 10g
     environment:
       MAP: Gen2
       SESSION_NAME: ARK-Genesis2
@@ -250,19 +223,14 @@ services:
 
   prometheus:
     image: prom/prometheus
-    ports:
-      - "9090:9090"
     volumes:
       - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
     restart: unless-stopped
 
   grafana:
     image: grafana/grafana
     ports:
       - "3000:3000"
-    volumes:
-      - grafana_data:/var/lib/grafana
     restart: unless-stopped
-
-volumes:
-  grafana_data:
