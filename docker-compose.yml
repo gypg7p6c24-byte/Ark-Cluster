@@ -1,0 +1,268 @@
+services:
+
+  ark-island:
+    platform: linux/amd64
+    build: .
+    profiles: ["optional"]
+    container_name: ark-island
+    cpus: "1.0"
+    cpuset: "0"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: TheIsland
+      SESSION_NAME: ARK-TheIsland
+      PORT: 7777
+      QUERY_PORT: 27015
+      RCON_PORT: 27020
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/island:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    ports:
+      - "7777:7777/udp"
+      - "7778:7778/udp"
+      - "27015:27015/udp"
+      - "27020:27020/tcp"
+    restart: unless-stopped
+
+  ark-scorched:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "1"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: ScorchedEarth_P
+      SESSION_NAME: ARK-Scorched
+      PORT: 7787
+      QUERY_PORT: 27115
+      RCON_PORT: 27120
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/scorched:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-aberration:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "2"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Aberration_P
+      SESSION_NAME: ARK-Aberration
+      PORT: 7797
+      QUERY_PORT: 27215
+      RCON_PORT: 27220
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/aberration:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-extinction:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "3"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Extinction
+      SESSION_NAME: ARK-Extinction
+      PORT: 7807
+      QUERY_PORT: 27315
+      RCON_PORT: 27320
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/extinction:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-ragnarok:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "4"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Ragnarok
+      SESSION_NAME: ARK-Ragnarok
+      PORT: 7817
+      QUERY_PORT: 27415
+      RCON_PORT: 27420
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/ragnarok:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-valguero:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "5"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Valguero_P
+      SESSION_NAME: ARK-Valguero
+      PORT: 7827
+      QUERY_PORT: 27515
+      RCON_PORT: 27520
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/valguero:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-crystal:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "6"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: CrystalIsles
+      SESSION_NAME: ARK-CrystalIsles
+      PORT: 7837
+      QUERY_PORT: 27615
+      RCON_PORT: 27620
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/crystal:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-lostisland:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "7"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: LostIsland
+      SESSION_NAME: ARK-LostIsland
+      PORT: 7847
+      QUERY_PORT: 27715
+      RCON_PORT: 27720
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/lostisland:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-fjordur:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "8"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Fjordur
+      SESSION_NAME: ARK-Fjordur
+      PORT: 7857
+      QUERY_PORT: 27815
+      RCON_PORT: 27820
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/fjordur:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-gen1:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "9"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Genesis
+      SESSION_NAME: ARK-Genesis1
+      PORT: 7867
+      QUERY_PORT: 27915
+      RCON_PORT: 27920
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/gen1:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  ark-gen2:
+    image: ark-island
+    platform: linux/amd64
+    profiles: ["optional"]
+    cpus: "1.0"
+    cpuset: "10"
+    mem_limit: 10g
+    memswap_limit: 10g
+    environment:
+      MAP: Gen2
+      SESSION_NAME: ARK-Genesis2
+      PORT: 7877
+      QUERY_PORT: 28015
+      RCON_PORT: 28020
+      CLUSTER_ID: arkcluster
+      ADMIN_PASSWORD: xxYY12345
+    volumes:
+      - ./data/gen2:/ark
+      - ./data/cluster:/arkcluster
+      - ./data/backups:/backups
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: unless-stopped
+
+volumes:
+  grafana_data:
