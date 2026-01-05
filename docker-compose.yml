@@ -309,4 +309,5 @@ volumes:
   ark_cluster_data:
   ark_backups:
   prometheus_data:
+  prometheus_config:
   grafana_data:
