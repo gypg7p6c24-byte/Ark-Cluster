@@ -1,6 +1,6 @@
 services:
 
-  ark-island:
+  ark-theisland:
     build: .
     image: ark-island
     profiles: ["disabled"]
