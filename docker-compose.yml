@@ -1,6 +1,6 @@
 services:
 
-  dev- ark-theisland:
+  dev_ ark-theisland:
     build: .
     image: ark-island
 
@@ -14,13 +14,13 @@ services:
       PORT: 8888
       QUERY_PORT: 9999
       RCON_PORT: 1313
-      CLUSTER_ID: dev-arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_theisland_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_theisland_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -42,9 +42,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_scorched_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_scorched_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -66,9 +66,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_aberration_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_aberration_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -90,9 +90,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_extinction_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_extinction_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -114,9 +114,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_ragnarok_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_ragnarok_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -138,9 +138,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_valguero_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_valguero_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -162,9 +162,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_crystal_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_crystal_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -186,9 +186,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_lostisland_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_lostisland_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -210,9 +210,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_fjordur_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_fjordur_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -234,9 +234,9 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_gen1_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_gen1_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
@@ -258,13 +258,13 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_gen2_data:/ark
-      - dev-ark_cluster_data:/arkcluster
-      - dev-ark_backups:/backups
+      - dev_ark_gen2_data:/ark
+      - dev_ark_cluster_data:/arkcluster
+      - dev_ark_backups:/backups
 
     restart: unless-stopped
 
-  dev-prometheus:
+  dev_prometheus:
     image: prom/prometheus
     profiles: ["disabled"]
     volumes:
@@ -274,30 +274,30 @@ services:
       - "9090:9090"
     restart: unless-stopped
 
-  dev-grafana:
+  dev_grafana:
     image: grafana/grafana
     profiles: ["disabled"]
     volumes:
-      - dev-grafana_data:/var/lib/grafana
+      - dev_grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
     restart: unless-stopped
 
 
 volumes:
-  dev-ark_theisland_data:
-  dev-ark_scorched_data:
-  dev-ark_aberration_data:
-  dev-ark_extinction_data:
-  dev-ark_ragnarok_data:
-  dev-ark_valguero_data:
-  dev-ark_crystal_data:
-  dev-ark_lostisland_data:
-  dev-ark_fjordur_data:
-  dev-ark_gen1_data:
-  dev-ark_gen2_data:
-  dev-ark_cluster_data:
-  dev-ark_backups:
-  dev-prometheus_data:
-  dev-prometheus_config:
-  dev-grafana_data:
+  dev_ark_theisland_data:
+  dev_ark_scorched_data:
+  dev_ark_aberration_data:
+  dev_ark_extinction_data:
+  dev_ark_ragnarok_data:
+  dev_ark_valguero_data:
+  dev_ark_crystal_data:
+  dev_ark_lostisland_data:
+  dev_ark_fjordur_data:
+  dev_ark_gen1_data:
+  dev_ark_gen2_data:
+  dev_ark_cluster_data:
+  dev_ark_backups:
+  dev_prometheus_data:
+  dev_prometheus_config:
+  dev_grafana_data:
