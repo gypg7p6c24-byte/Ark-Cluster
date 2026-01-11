@@ -11,9 +11,9 @@ services:
     environment:
       MAP: TheIsland
       SESSION_NAME: ARK-TheIsland
-      PORT: 7777
-      QUERY_PORT: 27015
-      RCON_PORT: 27020
+      PORT: 8888
+      QUERY_PORT: 9999
+      RCON_PORT: 1313
       CLUSTER_ID: dev-arkcluster
       ADMIN_PASSWORD: xxYY12345
 
