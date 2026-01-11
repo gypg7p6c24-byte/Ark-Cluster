@@ -18,7 +18,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_theisland_data:/app
+      - dev-ark_theisland_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -42,7 +42,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_scorched_data:/app
+      - dev-ark_scorched_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -66,7 +66,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_aberration_data:/app
+      - dev-ark_aberration_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -90,7 +90,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_extinction_data:/app
+      - dev-ark_extinction_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -114,7 +114,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_ragnarok_data:/app
+      - dev-ark_ragnarok_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -138,7 +138,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_valguero_data:/app
+      - dev-ark_valguero_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -162,7 +162,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_crystal_data:/app
+      - dev-ark_crystal_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -186,7 +186,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_lostisland_data:/app
+      - dev-ark_lostisland_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -210,7 +210,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_fjordur_data:/app
+      - dev-ark_fjordur_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -234,7 +234,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_gen1_data:/app
+      - dev-ark_gen1_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
@@ -258,7 +258,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
 
     volumes:
-      - dev-ark_gen2_data:/app
+      - dev-ark_gen2_data:/ark
       - dev-ark_cluster_data:/arkcluster
       - dev-ark_backups:/backups
 
