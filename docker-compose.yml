@@ -1,6 +1,6 @@
 services:
 
-  dev_ ark-theisland:
+  dev_ark-theisland:
     build: .
     image: ark-island
 
