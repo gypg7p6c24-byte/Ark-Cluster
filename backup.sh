@@ -4,15 +4,22 @@ set -e
 BACKUP_ROOT="/backups/${MAP}"
 DATE=$(date +"%Y-%m-%d_%H-%M")
 CURRENT="${BACKUP_ROOT}/${DATE}"
+SRC="/ark/ShooterGame/Saved"
+
+# 🔧 Sécurité : ARK pas encore installé
+if [ ! -d "$SRC" ]; then
+  echo "▶ Backup ignoré : dossier Saved non encore créé"
+  exit 0
+fi
 
 mkdir -p "$CURRENT"
 
 LAST=$(ls -1dt ${BACKUP_ROOT}/* 2>/dev/null | head -n 1)
 
 if [ -n "$LAST" ]; then
-  rsync -a --delete --link-dest="$LAST" /ark/ShooterGame/Saved/ "$CURRENT/"
+  rsync -a --delete --link-dest="$LAST" "$SRC/" "$CURRENT/"
 else
-  rsync -a /ark/ShooterGame/Saved/ "$CURRENT/"
+  rsync -a "$SRC/" "$CURRENT/"
 fi
 
 tar -czf "${CURRENT}.tar.gz" -C "$CURRENT" .
