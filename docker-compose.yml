@@ -24,7 +24,8 @@ services:
 
     restart: unless-stopped
 
-  ark-scorched:
+  dev-ark-scorched:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -48,7 +49,8 @@ services:
 
     restart: unless-stopped
 
-  ark-aberration:
+  dev-ark-aberration:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -72,7 +74,8 @@ services:
 
     restart: unless-stopped
 
-  ark-extinction:
+  dev-ark-extinction:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -96,7 +99,8 @@ services:
 
     restart: unless-stopped
 
-  ark-ragnarok:
+  dev-ark-ragnarok:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -120,7 +124,8 @@ services:
 
     restart: unless-stopped
 
-  ark-valguero:
+  dev-ark-valguero:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -144,7 +149,8 @@ services:
 
     restart: unless-stopped
 
-  ark-crystal:
+  dev-ark-crystal:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -168,7 +174,8 @@ services:
 
     restart: unless-stopped
 
-  ark-lostisland:
+  dev-ark-lostisland:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -192,7 +199,8 @@ services:
 
     restart: unless-stopped
 
-  ark-fjordur:
+  dev-ark-fjordur:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -216,7 +224,8 @@ services:
 
     restart: unless-stopped
 
-  ark-gen1:
+  dev-ark-gen1:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
@@ -240,7 +249,8 @@ services:
 
     restart: unless-stopped
 
-  ark-gen2:
+  dev-ark-gen2:
+    build: .
     image: ark-island
     profiles: ["disabled"]
 
