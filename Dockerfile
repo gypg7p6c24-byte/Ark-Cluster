@@ -21,6 +21,7 @@ RUN dpkg --add-architecture i386 \
  && apt clean \
  && rm -rf /var/lib/apt/lists/*
 
+ENV PATH="/usr/games:${PATH}"
 USER steam
 WORKDIR /ark
 
