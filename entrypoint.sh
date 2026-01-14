@@ -8,6 +8,7 @@ QUERY_PORT=${QUERY_PORT}
 RCON_PORT=${RCON_PORT}
 CLUSTER_ID=${CLUSTER_ID}
 ADMIN_PASSWORD=${ADMIN_PASSWORD}
+ARK_BIN="/ark/ShooterGame/Binaries/Linux/ShooterGameServer"
 
 mkdir -p /home/steam/.steam
 mkdir -p /home/steam/.steam/steam
@@ -16,12 +17,15 @@ mkdir -p /home/steam/.steam/root
 echo "▶ Backup de sécurité avant update"
 sh /backup.sh || true
 
-echo "▶ Installing / Updating ARK (${MAP})"
+if [ ! -f "$ARK_BIN" ]; then
 steamcmd \
   +force_install_dir /ark \
   +login anonymous \
   +app_update 376030 validate \
   +quit
+else
+  echo "▶ ARK déjà installé, installation ignorée"
+fi
 
 # Backup toutes les 6h
 (crontab -l 2>/dev/null; echo "0 */6 * * * /backup.sh") | crontab -
