@@ -1,8 +1,7 @@
 services:
 
   dev-ark-theisland:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
 
     cpus: "1.0"
     cpuset: "0"
@@ -25,8 +24,7 @@ services:
     restart: unless-stopped
 
   dev-ark-scorched:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -50,8 +48,7 @@ services:
     restart: unless-stopped
 
   dev-ark-aberration:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -75,8 +72,7 @@ services:
     restart: unless-stopped
 
   dev-ark-extinction:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -100,8 +96,7 @@ services:
     restart: unless-stopped
 
   dev-ark-ragnarok:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -125,8 +120,7 @@ services:
     restart: unless-stopped
 
   dev-ark-valguero:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -150,8 +144,7 @@ services:
     restart: unless-stopped
 
   dev-ark-crystal:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -175,8 +168,7 @@ services:
     restart: unless-stopped
 
   dev-ark-lostisland:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -200,8 +192,7 @@ services:
     restart: unless-stopped
 
   dev-ark-fjordur:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -225,8 +216,7 @@ services:
     restart: unless-stopped
 
   dev-ark-gen1:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
@@ -250,8 +240,7 @@ services:
     restart: unless-stopped
 
   dev-ark-gen2:
-    build: .
-    image: ark-island
+    image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
 
     cpus: "1.0"
