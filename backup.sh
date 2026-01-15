@@ -6,9 +6,9 @@ DATE=$(date +"%Y-%m-%d_%H-%M")
 CURRENT="${BACKUP_ROOT}/${DATE}"
 SRC="/ark/ShooterGame/Saved"
 
-# 🔧 Sécurité : ARK pas encore installé
+# If Ark not installed yet, step ignored
 if [ ! -d "$SRC" ]; then
-  echo "▶ Backup ignoré : dossier Saved non encore créé"
+  echo "▶ Backup ignored : First install - No file available"
   exit 0
 fi
 
