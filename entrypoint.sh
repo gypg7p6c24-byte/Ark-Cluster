@@ -1,32 +1,39 @@
 #!/bin/bash
 set -e
 
-ARK_BIN="/ark/ShooterGame/Binaries/Linux/ShooterGameServer"
+: "${MAP:?MAP is required}"
+: "${SESSION_NAME:?SESSION_NAME is required}"
+: "${PORT:?PORT is required}"
+: "${QUERY_PORT:?QUERY_PORT is required}"
+: "${RCON_PORT:?RCON_PORT is required}"
+: "${CLUSTER_ID:?CLUSTER_ID is required}"
+: "${ADMIN_PASSWORD:?ADMIN_PASSWORD is required}"
 
-mkdir -p /home/steam/.steam
-mkdir -p /home/steam/.steam/steam
-mkdir -p /home/steam/.steam/root
-
-echo "▶ Backup de sécurité avant update"
-sh /backup.sh || true
-
+# Installation ARK si absent
 if [ ! -f "$ARK_BIN" ]; then
-  echo "▶ ARK non installé, installation en cours"
-  steamcmd \
-    +force_install_dir /ark \
-    +login anonymous \
+  "$STEAMCMD" +login anonymous \
+    +force_install_dir "$ARK_DIR" \
     +app_update 376030 validate \
     +quit
-else
-  echo "▶ ARK déjà installé, installation ignorée"
 fi
 
-echo "▶ Lancement du serveur ARK (${MAP})"
+INI="/ark/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini"
+mkdir -p "$(dirname "$INI")"
 
-cd /ark/ShooterGame/Binaries/Linux
+grep -q "RCONEnabled=True" "$INI" 2>/dev/null || cat >> "$INI" <<EOF
 
-exec ./ShooterGameServer \
-  ${MAP}?SessionName=${SESSION_NAME}?Port=${PORT}?QueryPort=${QUERY_PORT}?RCONPort=${RCON_PORT}?ServerAdminPassword=${ADMIN_PASSWORD}?ClusterId=${CLUSTER_ID}?AltSaveDirectoryName=${MAP} \
-  -server -log -USEALLAVAILABLECORES \
-  -clusterid=${CLUSTER_ID} \
-  -ClusterDirOverride=/arkcluster
+[RCON]
+RCONEnabled=True
+RCONPort=$RCON_PORT
+ServerAdminPassword=$ADMIN_PASSWORD
+EOF
+
+exec "$ARK_BIN" "$MAP?listen?RCONEnabled=True" \
+  -SessionName="$SESSION_NAME" \
+  -Port="$PORT" \
+  -QueryPort="$QUERY_PORT" \
+  -RCONPort="$RCON_PORT" \
+  -clusterid="$CLUSTER_ID" \
+  -ClusterDirOverride=/arkcluster \
+  -server \
+  -log

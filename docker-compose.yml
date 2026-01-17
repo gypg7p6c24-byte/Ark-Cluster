@@ -2,11 +2,9 @@ services:
 
   dev-ark-theisland:
     image: pyrr0/ark-ase-cluster:latest
-
     cpus: "1.0"
     cpuset: "0"
     mem_limit: 10g
-    
     environment:
       MAP: TheIsland
       SESSION_NAME: ARK-TheIsland
@@ -14,261 +12,263 @@ services:
       QUERY_PORT: 9999
       RCON_PORT: 1313
       CLUSTER_ID: dev_arkcluster
-      ADMIN_PASSWORD: xxYY12345
-
+      ADMIN_PASSWORD: xxYY12345 # ⚠️ CHANGE THIS PASSWORD
+    ports:
+      - "8888:8888/udp"
+      - "9999:9999/udp"
+      - "1313:1313/tcp"
     volumes:
       - dev_ark_theisland_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-scorched:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "1"
     mem_limit: 10g
-
     environment:
       MAP: ScorchedEarth_P
       SESSION_NAME: ARK-Scorched
       PORT: 7787
       QUERY_PORT: 27115
       RCON_PORT: 27120
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7787:7787/udp"
+      - "27115:27115/udp"
+      - "27120:27120/tcp"
     volumes:
       - dev_ark_scorched_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-aberration:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "2"
     mem_limit: 10g
-
     environment:
       MAP: Aberration_P
       SESSION_NAME: ARK-Aberration
       PORT: 7797
       QUERY_PORT: 27215
       RCON_PORT: 27220
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7797:7797/udp"
+      - "27215:27215/udp"
+      - "27220:27220/tcp"
     volumes:
       - dev_ark_aberration_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-extinction:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "3"
     mem_limit: 10g
-
     environment:
       MAP: Extinction
       SESSION_NAME: ARK-Extinction
       PORT: 7807
       QUERY_PORT: 27315
       RCON_PORT: 27320
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7807:7807/udp"
+      - "27315:27315/udp"
+      - "27320:27320/tcp"
     volumes:
       - dev_ark_extinction_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-ragnarok:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "4"
     mem_limit: 10g
-
     environment:
       MAP: Ragnarok
       SESSION_NAME: ARK-Ragnarok
       PORT: 7817
       QUERY_PORT: 27415
       RCON_PORT: 27420
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7817:7817/udp"
+      - "27415:27415/udp"
+      - "27420:27420/tcp"
     volumes:
       - dev_ark_ragnarok_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-valguero:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "5"
     mem_limit: 10g
-
     environment:
       MAP: Valguero_P
       SESSION_NAME: ARK-Valguero
       PORT: 7827
       QUERY_PORT: 27515
       RCON_PORT: 27520
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7827:7827/udp"
+      - "27515:27515/udp"
+      - "27520:27520/tcp"
     volumes:
       - dev_ark_valguero_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-crystal:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "6"
     mem_limit: 10g
-
     environment:
       MAP: CrystalIsles
       SESSION_NAME: ARK-CrystalIsles
       PORT: 7837
       QUERY_PORT: 27615
       RCON_PORT: 27620
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7837:7837/udp"
+      - "27615:27615/udp"
+      - "27620:27620/tcp"
     volumes:
       - dev_ark_crystal_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-lostisland:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "7"
     mem_limit: 10g
-
     environment:
       MAP: LostIsland
       SESSION_NAME: ARK-LostIsland
       PORT: 7847
       QUERY_PORT: 27715
       RCON_PORT: 27720
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7847:7847/udp"
+      - "27715:27715/udp"
+      - "27720:27720/tcp"
     volumes:
       - dev_ark_lostisland_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-fjordur:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "8"
     mem_limit: 10g
-
     environment:
       MAP: Fjordur
       SESSION_NAME: ARK-Fjordur
       PORT: 7857
       QUERY_PORT: 27815
       RCON_PORT: 27820
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7857:7857/udp"
+      - "27815:27815/udp"
+      - "27820:27820/tcp"
     volumes:
       - dev_ark_fjordur_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-gen1:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "9"
     mem_limit: 10g
-
     environment:
       MAP: Genesis
       SESSION_NAME: ARK-Genesis1
       PORT: 7867
       QUERY_PORT: 27915
       RCON_PORT: 27920
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7867:7867/udp"
+      - "27915:27915/udp"
+      - "27920:27920/tcp"
     volumes:
       - dev_ark_gen1_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-ark-gen2:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
-
     cpus: "1.0"
     cpuset: "10"
     mem_limit: 10g
-
     environment:
       MAP: Gen2
       SESSION_NAME: ARK-Genesis2
       PORT: 7877
       QUERY_PORT: 28015
       RCON_PORT: 28020
-      CLUSTER_ID: arkcluster
+      CLUSTER_ID: dev_arkcluster
       ADMIN_PASSWORD: xxYY12345
-
+    ports:
+      - "7877:7877/udp"
+      - "28015:28015/udp"
+      - "28020:28020/tcp"
     volumes:
       - dev_ark_gen2_data:/ark
       - dev_ark_cluster_data:/arkcluster
       - dev_ark_backups:/backups
-
     restart: unless-stopped
 
   dev-prometheus:
     image: prom/prometheus
     profiles: ["disabled"]
     volumes:
-      - prometheus_data:/prometheus
-      - prometheus_config:/etc/prometheus
+      - dev_prometheus_data:/prometheus
+      - dev_prometheus_config:/etc/prometheus
     ports:
       - "9090:9090"
     restart: unless-stopped
@@ -281,7 +281,6 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
-
 
 volumes:
   dev_ark_theisland_data:
