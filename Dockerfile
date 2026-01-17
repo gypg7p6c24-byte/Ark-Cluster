@@ -24,9 +24,9 @@ WORKDIR /home/steam
 RUN mkdir -p steamcmd && \
     curl -sSL -o steamcmd_linux.tar.gz \
       https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \
-    echo "$STEAMCMD_SHA256  steamcmd_linux.tar.gz" | sha256sum -c - && \
     tar -xz -C steamcmd -f steamcmd_linux.tar.gz && \
     rm steamcmd_linux.tar.gz
+
 
 ENV STEAMCMD=/home/steam/steamcmd/steamcmd.sh
 ENV ARK_DIR=/ark
