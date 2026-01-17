@@ -1,6 +1,6 @@
 services:
 
-  dev-ark-theisland:
+  ark-theisland:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     cpuset: "0"
@@ -23,7 +23,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-scorched:
+  ark-scorched:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -47,7 +47,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-aberration:
+  ark-aberration:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -71,7 +71,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-extinction:
+  ark-extinction:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -95,7 +95,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-ragnarok:
+  ark-ragnarok:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -119,7 +119,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-valguero:
+  ark-valguero:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -143,7 +143,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-crystal:
+  ark-crystal:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -167,7 +167,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-lostisland:
+  ark-lostisland:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -191,7 +191,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-fjordur:
+  ark-fjordur:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -215,7 +215,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-gen1:
+  ark-gen1:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -239,7 +239,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-ark-gen2:
+  ark-gen2:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -263,7 +263,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  dev-prometheus:
+  prometheus:
     image: prom/prometheus
     profiles: ["disabled"]
     volumes:
@@ -273,7 +273,7 @@ services:
       - "9090:9090"
     restart: unless-stopped
 
-  dev-grafana:
+  grafana:
     image: grafana/grafana
     profiles: ["disabled"]
     volumes:
