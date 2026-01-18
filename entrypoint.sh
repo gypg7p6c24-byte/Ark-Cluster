@@ -10,7 +10,6 @@ echo "[ARK] Starting ARK ASE Server"
 : "${ADMIN_PASSWORD:?Missing ADMIN_PASSWORD}"
 : "${MAX_PLAYERS:?Missing MAX_PLAYERS}"
 : "${GAME_PORT:?Missing GAME_PORT}"
-: "${GAME_CLIENT_PORT:?Missing GAME_CLIENT_PORT}"
 : "${RAW_UDP_PORT:?Missing RAW_UDP_PORT}"
 : "${QUERY_PORT:?Missing QUERY_PORT}"
 : "${CLUSTER_ID:?Missing CLUSTER_ID}"
@@ -28,7 +27,7 @@ ARGS=(
   "ServerPassword=${SERVER_PASSWORD}"
   "ServerAdminPassword=${ADMIN_PASSWORD}"
   "MaxPlayers=${MAX_PLAYERS}"
-  "Port=${GAME_CLIENT_PORT}"
+  "Port=${GAME_PORT}"
   "QueryPort=${QUERY_PORT}"
 )
 
