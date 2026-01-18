@@ -10,9 +10,11 @@ echo "[ARK] Starting ARK ASE Server"
 : "${ADMIN_PASSWORD:?Missing ADMIN_PASSWORD}"
 : "${MAX_PLAYERS:?Missing MAX_PLAYERS}"
 : "${GAME_PORT:?Missing GAME_PORT}"
-: "${RAW_UDP_PORT:?Missing RAW_UDP_PORT}"
 : "${QUERY_PORT:?Missing QUERY_PORT}"
+: "${RCON_PORT:?Missing RCON_PORT}"
 : "${CLUSTER_ID:?Missing CLUSTER_ID}"
+
+
 
 ARK_DIR="/ark"
 SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
@@ -29,6 +31,7 @@ ARGS=(
   "MaxPlayers=${MAX_PLAYERS}"
   "Port=${GAME_PORT}"
   "QueryPort=${QUERY_PORT}"
+  "RCONPort=${QUERY_PORT}"
 )
 
 # Mods (optionnel)
