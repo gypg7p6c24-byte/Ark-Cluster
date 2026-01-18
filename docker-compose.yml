@@ -7,7 +7,7 @@ services:
     mem_limit: 10g
     environment:
       SERVER_MAP: TheIsland
-      SESSION_NAME: ARK-TheIsland
+      SESSION_NAME: DEV-ARK-TheIsland
       MAX_PLAYERS: 3
       GAME_PORT: 8888
       QUERY_PORT: 1313
