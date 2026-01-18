@@ -20,7 +20,7 @@ RUN useradd -m -s /bin/bash steam
 USER steam
 WORKDIR /home/steam
 
-# SteamCMD officiel Valve + vérification d'intégrité
+# Official SteamCMD Valve + integirty checking
 RUN mkdir -p steamcmd && \
     curl -sSL -o steamcmd_linux.tar.gz \
       https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \
@@ -38,4 +38,7 @@ RUN chmod +x /entrypoint.sh /backup.sh
 
 VOLUME ["/ark", "/arkcluster", "/backups"]
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=2m --retries=3 \
+  CMD pgrep ShooterGameServer >/dev/null || exit 1
+  Ò
 ENTRYPOINT ["/entrypoint.sh"]

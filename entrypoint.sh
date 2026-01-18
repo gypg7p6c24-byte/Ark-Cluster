@@ -1,39 +1,67 @@
 #!/bin/bash
 set -e
 
-: "${MAP:?MAP is required}"
-: "${SESSION_NAME:?SESSION_NAME is required}"
-: "${PORT:?PORT is required}"
-: "${QUERY_PORT:?QUERY_PORT is required}"
-: "${RCON_PORT:?RCON_PORT is required}"
-: "${CLUSTER_ID:?CLUSTER_ID is required}"
-: "${ADMIN_PASSWORD:?ADMIN_PASSWORD is required}"
+echo "[ARK] Starting ARK ASE Server"
 
-# Installation ARK si absent
-if [ ! -f "$ARK_BIN" ]; then
-  "$STEAMCMD" +login anonymous \
-    +force_install_dir "$ARK_DIR" \
-    +app_update 376030 validate \
-    +quit
+# Variables obligatoires
+: "${SERVER_MAP:?Missing SERVER_MAP}"
+: "${SESSION_NAME:?Missing SESSION_NAME}"
+: "${SERVER_PASSWORD:?Missing SERVER_PASSWORD}"
+: "${ADMIN_PASSWORD:?Missing ADMIN_PASSWORD}"
+: "${MAX_PLAYERS:?Missing MAX_PLAYERS}"
+: "${GAME_PORT:?Missing GAME_PORT}"
+: "${GAME_CLIENT_PORT:?Missing GAME_CLIENT_PORT}"
+: "${RAW_UDP_PORT:?Missing RAW_UDP_PORT}"
+: "${QUERY_PORT:?Missing QUERY_PORT}"
+: "${CLUSTER_ID:?Missing CLUSTER_ID}"
+
+ARK_DIR="/ark"
+SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
+CLUSTER_DIR="${SAVE_DIR}/clusters/${CLUSTER_ID}"
+
+mkdir -p "${CLUSTER_DIR}"
+
+# Construction options serveur
+ARGS=(
+  "${SERVER_MAP}?listen"
+  "SessionName=${SESSION_NAME}"
+  "ServerPassword=${SERVER_PASSWORD}"
+  "ServerAdminPassword=${ADMIN_PASSWORD}"
+  "MaxPlayers=${MAX_PLAYERS}"
+  "Port=${GAME_CLIENT_PORT}"
+  "QueryPort=${QUERY_PORT}"
+)
+
+# Mods (optionnel)
+if [ -n "${GAME_MOD_IDS}" ]; then
+  ARGS+=("GameModIds=${GAME_MOD_IDS}")
 fi
 
-INI="/ark/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini"
-mkdir -p "$(dirname "$INI")"
+# Logs
+ARGS+=(
+  "-server"
+  "-log"
+  "-servergamelog"
+  "-servergamelogincludetribelogs"
+)
 
-grep -q "RCONEnabled=True" "$INI" 2>/dev/null || cat >> "$INI" <<EOF
+# Réseau
+ARGS+=(
+  "-NoTransferFromFiltering"
+  "-ClusterDirOverride=${CLUSTER_DIR}"
+)
 
-[RCON]
-RCONEnabled=True
-RCONPort=$RCON_PORT
-ServerAdminPassword=$ADMIN_PASSWORD
-EOF
+# Anti-cheat
+ARGS+=(
+  "-UseBattlEye"
+)
 
-exec "$ARK_BIN" "$MAP?listen?RCONEnabled=True" \
-  -SessionName="$SESSION_NAME" \
-  -Port="$PORT" \
-  -QueryPort="$QUERY_PORT" \
-  -RCONPort="$RCON_PORT" \
-  -clusterid="$CLUSTER_ID" \
-  -ClusterDirOverride=/arkcluster \
-  -server \
-  -log
+# Gameplay
+ARGS+=(
+  "-AllowThirdPersonPlayer"
+)
+
+echo "[ARK] Launch command:"
+echo "${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer ${ARGS[*]}"
+
+exec "${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer" "${ARGS[@]}"

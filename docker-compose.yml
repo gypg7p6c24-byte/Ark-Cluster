@@ -6,16 +6,19 @@ services:
     cpuset: "0"
     mem_limit: 10g
     environment:
-      MAP: TheIsland
+      SERVER_MAP: TheIsland
       SESSION_NAME: ARK-TheIsland
-      PORT: 8888
-      QUERY_PORT: 9999
-      RCON_PORT: 1313
+      MAX_PLAYERS: 3
+      GAME_PORT: 8888
+      QUERY_PORT: 1313
+      RCON_PORT: 1414
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345 # ⚠️ CHANGE THIS PASSWORD
+      GAME_MOD_IDS: ""
     ports:
       - "8888:8888/udp"
-      - "9999:9999/udp"
+      - "9999:8889/udp"
       - "1313:1313/tcp"
     volumes:
       - dev_ark_theisland_data:/ark
@@ -30,12 +33,14 @@ services:
     cpuset: "1"
     mem_limit: 10g
     environment:
-      MAP: ScorchedEarth_P
+      SERVER_MAP: ScorchedEarth_P
       SESSION_NAME: ARK-Scorched
+      MAX_PLAYERS: 3
       PORT: 7787
       QUERY_PORT: 27115
       RCON_PORT: 27120
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7787:7787/udp"
@@ -54,12 +59,14 @@ services:
     cpuset: "2"
     mem_limit: 10g
     environment:
-      MAP: Aberration_P
+      SERVER_MAP: Aberration_P
       SESSION_NAME: ARK-Aberration
+      MAX_PLAYERS: 3
       PORT: 7797
       QUERY_PORT: 27215
       RCON_PORT: 27220
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7797:7797/udp"
@@ -78,12 +85,14 @@ services:
     cpuset: "3"
     mem_limit: 10g
     environment:
-      MAP: Extinction
+      SERVER_MAP: Extinction
       SESSION_NAME: ARK-Extinction
+      MAX_PLAYERS: 3
       PORT: 7807
       QUERY_PORT: 27315
       RCON_PORT: 27320
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7807:7807/udp"
@@ -102,12 +111,14 @@ services:
     cpuset: "4"
     mem_limit: 10g
     environment:
-      MAP: Ragnarok
+      SERVER_MAP: Ragnarok
       SESSION_NAME: ARK-Ragnarok
+      MAX_PLAYERS: 3
       PORT: 7817
       QUERY_PORT: 27415
       RCON_PORT: 27420
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7817:7817/udp"
@@ -126,12 +137,14 @@ services:
     cpuset: "5"
     mem_limit: 10g
     environment:
-      MAP: Valguero_P
+      SERVER_MAP: Valguero_P
       SESSION_NAME: ARK-Valguero
+      MAX_PLAYERS: 3
       PORT: 7827
       QUERY_PORT: 27515
       RCON_PORT: 27520
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7827:7827/udp"
@@ -150,12 +163,14 @@ services:
     cpuset: "6"
     mem_limit: 10g
     environment:
-      MAP: CrystalIsles
+      SERVER_MAP: CrystalIsles
       SESSION_NAME: ARK-CrystalIsles
+      MAX_PLAYERS: 3
       PORT: 7837
       QUERY_PORT: 27615
       RCON_PORT: 27620
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7837:7837/udp"
@@ -174,12 +189,14 @@ services:
     cpuset: "7"
     mem_limit: 10g
     environment:
-      MAP: LostIsland
+      SERVER_MAP: LostIsland
       SESSION_NAME: ARK-LostIsland
+      MAX_PLAYERS: 3
       PORT: 7847
       QUERY_PORT: 27715
       RCON_PORT: 27720
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7847:7847/udp"
@@ -198,12 +215,14 @@ services:
     cpuset: "8"
     mem_limit: 10g
     environment:
-      MAP: Fjordur
+      SERVER_MAP: Fjordur
       SESSION_NAME: ARK-Fjordur
+      MAX_PLAYERS: 3
       PORT: 7857
       QUERY_PORT: 27815
       RCON_PORT: 27820
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7857:7857/udp"
@@ -222,12 +241,14 @@ services:
     cpuset: "9"
     mem_limit: 10g
     environment:
-      MAP: Genesis
+      SERVER_MAP: Genesis
       SESSION_NAME: ARK-Genesis1
+      MAX_PLAYERS: 3
       PORT: 7867
       QUERY_PORT: 27915
       RCON_PORT: 27920
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7867:7867/udp"
@@ -246,12 +267,14 @@ services:
     cpuset: "10"
     mem_limit: 10g
     environment:
-      MAP: Gen2
+      SERVER_MAP: Gen2
       SESSION_NAME: ARK-Genesis2
+      MAX_PLAYERS: 3
       PORT: 7877
       QUERY_PORT: 28015
       RCON_PORT: 28020
       CLUSTER_ID: dev_arkcluster
+      SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7877:7877/udp"
