@@ -40,5 +40,5 @@ VOLUME ["/ark", "/arkcluster", "/backups"]
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=2m --retries=3 \
   CMD pgrep ShooterGameServer >/dev/null || exit 1
-  Ò
+
 ENTRYPOINT ["/entrypoint.sh"]
