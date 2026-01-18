@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-echo "[ARK] Starting ARK ASE Server"
+echo "[INFO] Fix permissions on volumes..."
+mkdir -p /ark /arkcluster /backups
+chown -R steam:steam /ark /arkcluster /backups
 
 # Variables obligatoires
 : "${SERVER_MAP:?Missing SERVER_MAP}"
