@@ -2,8 +2,13 @@ FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV STEAMCMD_SHA256=2e92f7c64a4f3e4bfae4e7e63c0f45f3d8c61c3c8d0b6e7c2b9c1b7c7b8e6e3d
+ARG TARGETARCH
 
-RUN dpkg --add-architecture i386 \
+RUN if [ "$TARGETARCH" = "amd64" ]; then \
+        dpkg --add-architecture i386; \
+    elif [ "$TARGETARCH" = "arm64" ]; then \
+        dpkg --add-architecture armhf; \
+    fi \
  && apt update \
  && echo steam steam/question select "I AGREE" | debconf-set-selections \
  && echo steam steam/license note "" | debconf-set-selections \
