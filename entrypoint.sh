@@ -1,10 +1,6 @@
 #!/bin/bash
 set -e
 
-echo "[INFO] Fix permissions on volumes..."
-mkdir -p /ark /arkcluster /backups
-chown -R steam:steam /ark /arkcluster /backups
-
 # Variables obligatoires
 : "${SERVER_MAP:?Missing SERVER_MAP}"
 : "${SESSION_NAME:?Missing SESSION_NAME}"
