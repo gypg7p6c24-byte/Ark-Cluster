@@ -12,11 +12,28 @@ set -e
 : "${RCON_PORT:?Missing RCON_PORT}"
 : "${CLUSTER_ID:?Missing CLUSTER_ID}"
 
-
-
 ARK_DIR="/ark"
+SERVER_BIN="${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer"
+
+echo "[ARK] Checking server installation..."
+
+if [ ! -f "$SERVER_BIN" ]; then
+  echo "[ARK] Server not found, installing via SteamCMD..."
+
+  mkdir -p "$ARK_DIR"
+
+  "$STEAMCMD_DIR/steamcmd.sh" \
+    +force_install_dir "$ARK_DIR" \
+    +login anonymous \
+    +app_update 376030 validate \
+    +quit
+else
+  echo "[ARK] Server already installed"
+fi
+
+
 SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
-CLUSTER_DIR="${SAVE_DIR}/clusters/${CLUSTER_ID}"
+CLUSTER_DIR="${SAVE_DIR}/clusters/"
 
 mkdir -p "${CLUSTER_DIR}"
 
