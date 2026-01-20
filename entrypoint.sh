@@ -22,7 +22,7 @@ if [ ! -f "$SERVER_BIN" ]; then
 
   mkdir -p "$ARK_DIR"
 
-  "$STEAMCMD_DIR/steamcmd.sh" \
+  "/usr/games/steamcmd" \
     +force_install_dir "$ARK_DIR" \
     +login anonymous \
     +app_update 376030 validate \
