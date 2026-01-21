@@ -46,7 +46,7 @@ ARGS=(
   "MaxPlayers=${MAX_PLAYERS}"
   "Port=${GAME_PORT}"
   "QueryPort=${QUERY_PORT}"
-  "RCONPort=${QUERY_PORT}"
+  "RCONPort=${RCON_PORT}"
 )
 
 # Mods (optionnel)
