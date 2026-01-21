@@ -69,9 +69,9 @@ ARGS+=(
 )
 
 # Anti-cheat
-ARGS+=(
-  "-UseBattlEye"
-)
+#ARGS+=(
+#  "-UseBattlEye"
+#)
 
 # Gameplay
 ARGS+=(
