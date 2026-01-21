@@ -60,7 +60,6 @@ ARGS+=(
   "-Port=${GAME_PORT}"
   "-QueryPort=${QUERY_PORT}"
   "-RCONPort=${RCON_PORT}"
-  "-Multihome=0.0.0.0"
   "-ClusterDirOverride=${CLUSTER_DIR}"
 )
 
