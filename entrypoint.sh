@@ -40,32 +40,32 @@ mkdir -p "${CLUSTER_DIR}"
 # Construction options serveur
 ARGS=(
   "${SERVER_MAP}?listen"
-  "SessionName=${SESSION_NAME}"
-  "ServerPassword=${SERVER_PASSWORD}"
-  "ServerAdminPassword=${ADMIN_PASSWORD}"
-  "MaxPlayers=${MAX_PLAYERS}"
-  "Port=${GAME_PORT}"
-  "QueryPort=${QUERY_PORT}"
-  "RCONPort=${RCON_PORT}"
+  "?SessionName=${SESSION_NAME}"
+  "?ServerPassword=${SERVER_PASSWORD}"
+  "?ServerAdminPassword=${ADMIN_PASSWORD}"
+  "?MaxPlayers=${MAX_PLAYERS}"
+  "?Port=${GAME_PORT}"
+  "?QueryPort=${QUERY_PORT}"
+  "?RCONPort=${RCON_PORT}"
 )
 
 # Mods (optionnel)
 if [ -n "${GAME_MOD_IDS}" ]; then
-  ARGS+=("GameModIds=${GAME_MOD_IDS}")
+  ARGS+=("?GameModIds=${GAME_MOD_IDS}")
 fi
 
 # Logs
 ARGS+=(
-  "-server"
-  "-log"
-  "-servergamelog"
-  "-servergamelogincludetribelogs"
+  "?-server"
+  "?-log"
+  "?-servergamelog"
+  "?-servergamelogincludetribelogs"
 )
 
 # Réseau
 ARGS+=(
-  "-NoTransferFromFiltering"
-  "-ClusterDirOverride=${CLUSTER_DIR}"
+  "?-NoTransferFromFiltering"
+  "?-ClusterDirOverride=${CLUSTER_DIR}"
 )
 
 # Anti-cheat
@@ -75,7 +75,7 @@ ARGS+=(
 
 # Gameplay
 ARGS+=(
-  "-AllowThirdPersonPlayer"
+  "?-AllowThirdPersonPlayer"
 )
 
 echo "[ARK] Launch command:"
