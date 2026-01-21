@@ -19,8 +19,8 @@ services:
     ports:
       - "8888:8888/udp"
       - "8889:8889/udp"
-      - "1414:1414/udp"
-      - "1313:1313/tcp"
+      - "1313:1313/udp"
+      - "1414:1414/tcp"
     volumes:
       - dev_ark_theisland_data:/ark
       - dev_ark_cluster_data:/arkcluster
