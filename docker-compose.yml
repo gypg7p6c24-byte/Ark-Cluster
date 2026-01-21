@@ -18,7 +18,8 @@ services:
       GAME_MOD_IDS: ""
     ports:
       - "8888:8888/udp"
-      - "9999:8889/udp"
+      - "8889:8889/udp"
+      - "1314:1314/udp"
       - "1313:1313/tcp"
     volumes:
       - dev_ark_theisland_data:/ark
