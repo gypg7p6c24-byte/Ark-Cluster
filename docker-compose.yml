@@ -1,6 +1,6 @@
 services:
 
-  ark-theisland:
+  the-island:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     cpuset: "0"
@@ -27,7 +27,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-scorched:
+  scorched-earth:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -53,7 +53,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-aberration:
+  aberration:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -79,7 +79,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-extinction:
+  extinction:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -105,7 +105,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-ragnarok:
+  ragnarok:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -131,7 +131,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-valguero:
+  valguero:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -157,7 +157,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-crystal:
+  crystal:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -183,7 +183,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-lostisland:
+  lostisland:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -209,7 +209,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-fjordur:
+  fjordur:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -235,7 +235,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-gen1:
+  genesis-1:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -261,7 +261,7 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  ark-gen2:
+  genesis-22:
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -287,23 +287,6 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - dev_prometheus_data:/prometheus
-      - dev_prometheus_config:/etc/prometheus
-    ports:
-      - "9090:9090"
-    restart: unless-stopped
-
-  grafana:
-    image: grafana/grafana
-    volumes:
-      - dev_grafana_data:/var/lib/grafana
-    ports:
-      - "3000:3000"
-    restart: unless-stopped
-
 volumes:
   dev_ark_theisland_data:
   dev_ark_scorched_data:
@@ -318,6 +301,3 @@ volumes:
   dev_ark_gen2_data:
   dev_ark_cluster_data:
   dev_ark_backups:
-  dev_prometheus_data:
-  dev_prometheus_config:
-  dev_grafana_data:
