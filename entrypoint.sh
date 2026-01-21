@@ -64,19 +64,10 @@ ARGS+=(
 
 # Réseau
 ARGS+=(
-  "-NoTransferFromFiltering"
   "-ClusterDirOverride=${CLUSTER_DIR}"
 )
 
-# Anti-cheat
-#ARGS+=(
-#  "-UseBattlEye"
-#)
 
-# Gameplay
-ARGS+=(
-  "-AllowThirdPersonPlayer"
-)
 
 echo "[ARK] Launch command:"
 echo "${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer ${ARGS[*]}"
