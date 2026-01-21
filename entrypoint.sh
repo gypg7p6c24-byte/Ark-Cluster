@@ -56,16 +56,16 @@ fi
 
 # Logs
 ARGS+=(
-  "?-server"
-  "?-log"
-  "?-servergamelog"
-  "?-servergamelogincludetribelogs"
+  "-server"
+  "-log"
+  "-servergamelog"
+  "-servergamelogincludetribelogs"
 )
 
 # Réseau
 ARGS+=(
-  "?-NoTransferFromFiltering"
-  "?-ClusterDirOverride=${CLUSTER_DIR}"
+  "-NoTransferFromFiltering"
+  "-ClusterDirOverride=${CLUSTER_DIR}"
 )
 
 # Anti-cheat
@@ -75,7 +75,7 @@ ARGS+=(
 
 # Gameplay
 ARGS+=(
-  "?-AllowThirdPersonPlayer"
+  "-AllowThirdPersonPlayer"
 )
 
 echo "[ARK] Launch command:"
