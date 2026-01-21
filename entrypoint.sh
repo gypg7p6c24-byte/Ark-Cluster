@@ -39,14 +39,7 @@ mkdir -p "${CLUSTER_DIR}"
 
 # Construction options serveur
 ARGS=(
-  "${SERVER_MAP}?listen"
-  "?SessionName=${SESSION_NAME}"
-  "?ServerPassword=${SERVER_PASSWORD}"
-  "?ServerAdminPassword=${ADMIN_PASSWORD}"
-  "?MaxPlayers=${MAX_PLAYERS}"
-  "?Port=${GAME_PORT}"
-  "?QueryPort=${QUERY_PORT}"
-  "?RCONPort=${RCON_PORT}"
+  "${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}?MaxPlayers=${MAX_PLAYERS}?Port=${GAME_PORT}?QueryPort=${QUERY_PORT}?RCONPort=${RCON_PORT}"
 )
 
 # Mods (optionnel)
