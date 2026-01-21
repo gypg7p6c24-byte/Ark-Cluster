@@ -57,6 +57,9 @@ ARGS+=(
 
 # Réseau
 ARGS+=(
+  "-Port=${GAME_PORT}"
+  "-QueryPort=${QUERY_PORT}"
+  "-RCONPort=${RCON_PORT}"
   "-ClusterDirOverride=${CLUSTER_DIR}"
 )
 
