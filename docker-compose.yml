@@ -27,13 +27,9 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-<<<<<<< Updated upstream
+
   scorched-earth:
-=======
-  scorched:
->>>>>>> Stashed changes
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "1"
     mem_limit: 10g
@@ -41,12 +37,13 @@ services:
       SERVER_MAP: ScorchedEarth_P
       SESSION_NAME: ARK-Scorched
       MAX_PLAYERS: 3
-      PORT: 7787
+      GAME_PORT: 7787
       QUERY_PORT: 27115
       RCON_PORT: 27120
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7787:7787/udp"
       - "7788:7788/udp"
@@ -60,7 +57,6 @@ services:
 
   aberration:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "2"
     mem_limit: 10g
@@ -68,14 +64,16 @@ services:
       SERVER_MAP: Aberration_P
       SESSION_NAME: ARK-Aberration
       MAX_PLAYERS: 3
-      PORT: 7797
+      GAME_PORT: 7797
       QUERY_PORT: 27215
       RCON_PORT: 27220
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7797:7797/udp"
+      - "7798:7798/udp"
       - "27215:27215/udp"
       - "27220:27220/tcp"
     volumes:
@@ -86,7 +84,6 @@ services:
 
   extinction:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "3"
     mem_limit: 10g
@@ -94,14 +91,16 @@ services:
       SERVER_MAP: Extinction
       SESSION_NAME: ARK-Extinction
       MAX_PLAYERS: 3
-      PORT: 7807
+      GAME_PORT: 7807
       QUERY_PORT: 27315
       RCON_PORT: 27320
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7807:7807/udp"
+      - "7808:7808/udp"
       - "27315:27315/udp"
       - "27320:27320/tcp"
     volumes:
@@ -112,7 +111,6 @@ services:
 
   ragnarok:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "4"
     mem_limit: 10g
@@ -120,14 +118,16 @@ services:
       SERVER_MAP: Ragnarok
       SESSION_NAME: ARK-Ragnarok
       MAX_PLAYERS: 3
-      PORT: 7817
+      GAME_PORT: 7817
       QUERY_PORT: 27415
       RCON_PORT: 27420
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7817:7817/udp"
+      - "7818:7818/udp"
       - "27415:27415/udp"
       - "27420:27420/tcp"
     volumes:
@@ -138,7 +138,6 @@ services:
 
   valguero:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "5"
     mem_limit: 10g
@@ -146,14 +145,16 @@ services:
       SERVER_MAP: Valguero_P
       SESSION_NAME: ARK-Valguero
       MAX_PLAYERS: 3
-      PORT: 7827
+      GAME_PORT: 7827
       QUERY_PORT: 27515
       RCON_PORT: 27520
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7827:7827/udp"
+      - "7828:7828/udp"
       - "27515:27515/udp"
       - "27520:27520/tcp"
     volumes:
@@ -164,7 +165,6 @@ services:
 
   crystal:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "6"
     mem_limit: 10g
@@ -172,14 +172,16 @@ services:
       SERVER_MAP: CrystalIsles
       SESSION_NAME: ARK-CrystalIsles
       MAX_PLAYERS: 3
-      PORT: 7837
+      GAME_PORT: 7837
       QUERY_PORT: 27615
       RCON_PORT: 27620
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7837:7837/udp"
+      - "7838:7838/udp"
       - "27615:27615/udp"
       - "27620:27620/tcp"
     volumes:
@@ -188,13 +190,8 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-<<<<<<< Updated upstream
-  lostisland:
-=======
   lost-island:
->>>>>>> Stashed changes
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "7"
     mem_limit: 10g
@@ -202,14 +199,16 @@ services:
       SERVER_MAP: LostIsland
       SESSION_NAME: ARK-LostIsland
       MAX_PLAYERS: 3
-      PORT: 7847
+      GAME_PORT: 7847
       QUERY_PORT: 27715
       RCON_PORT: 27720
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7847:7847/udp"
+      - "7848:7848/udp"
       - "27715:27715/udp"
       - "27720:27720/tcp"
     volumes:
@@ -220,7 +219,6 @@ services:
 
   fjordur:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "8"
     mem_limit: 10g
@@ -228,14 +226,16 @@ services:
       SERVER_MAP: Fjordur
       SESSION_NAME: ARK-Fjordur
       MAX_PLAYERS: 3
-      PORT: 7857
+      GAME_PORT: 7857
       QUERY_PORT: 27815
       RCON_PORT: 27820
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7857:7857/udp"
+      - "7858:7858/udp"
       - "27815:27815/udp"
       - "27820:27820/tcp"
     volumes:
@@ -246,7 +246,6 @@ services:
 
   genesis-1:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "9"
     mem_limit: 10g
@@ -254,14 +253,16 @@ services:
       SERVER_MAP: Genesis
       SESSION_NAME: ARK-Genesis1
       MAX_PLAYERS: 3
-      PORT: 7867
+      GAME_PORT: 7867
       QUERY_PORT: 27915
       RCON_PORT: 27920
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7867:7867/udp"
+      - "7868:7868/udp"
       - "27915:27915/udp"
       - "27920:27920/tcp"
     volumes:
@@ -270,9 +271,8 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
-  genesis-22:
+  genesis-2:
     image: pyrr0/ark-ase-cluster:latest
-    profiles: ["disabled"]
     cpus: "1.0"
     cpuset: "10"
     mem_limit: 10g
@@ -280,14 +280,16 @@ services:
       SERVER_MAP: Gen2
       SESSION_NAME: ARK-Genesis2
       MAX_PLAYERS: 3
-      PORT: 7877
+      GAME_PORT: 7877
       QUERY_PORT: 28015
       RCON_PORT: 28020
       CLUSTER_ID: dev_arkcluster
       SERVER_PASSWORD: NotAPassword
       ADMIN_PASSWORD: xxYY12345
+      GAME_MOD_IDS: ""
     ports:
       - "7877:7877/udp"
+      - "7878:7878/udp"
       - "28015:28015/udp"
       - "28020:28020/tcp"
     volumes:
