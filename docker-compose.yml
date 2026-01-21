@@ -27,7 +27,11 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
+<<<<<<< Updated upstream
   scorched-earth:
+=======
+  scorched:
+>>>>>>> Stashed changes
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
@@ -45,6 +49,7 @@ services:
       ADMIN_PASSWORD: xxYY12345
     ports:
       - "7787:7787/udp"
+      - "7788:7788/udp"
       - "27115:27115/udp"
       - "27120:27120/tcp"
     volumes:
@@ -183,7 +188,11 @@ services:
       - dev_ark_backups:/backups
     restart: unless-stopped
 
+<<<<<<< Updated upstream
   lostisland:
+=======
+  lost-island:
+>>>>>>> Stashed changes
     image: pyrr0/ark-ase-cluster:latest
     profiles: ["disabled"]
     cpus: "1.0"
