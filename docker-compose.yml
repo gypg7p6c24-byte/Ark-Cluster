@@ -289,7 +289,6 @@ services:
 
   prometheus:
     image: prom/prometheus
-    profiles: ["disabled"]
     volumes:
       - dev_prometheus_data:/prometheus
       - dev_prometheus_config:/etc/prometheus
@@ -299,7 +298,6 @@ services:
 
   grafana:
     image: grafana/grafana
-    profiles: ["disabled"]
     volumes:
       - dev_grafana_data:/var/lib/grafana
     ports:
