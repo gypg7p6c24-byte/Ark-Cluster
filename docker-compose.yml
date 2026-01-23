@@ -13,8 +13,8 @@ services:
       QUERY_PORT: 1313
       RCON_PORT: 1414
       CLUSTER_ID: dev_arkcluster
-      SERVER_PASSWORD: NotAPassword
-      ADMIN_PASSWORD: xxYY12345 # ⚠️ CHANGE THIS PASSWORD
+      SERVER_PASSWORD: NotAPassword # CHANGE THIS PASSWORD
+      ADMIN_PASSWORD: xxYY12345 # CHANGE THIS PASSWORD
       GAME_MOD_IDS: ""
     ports:
       - "8888:8888/udp"
@@ -31,7 +31,6 @@ services:
   scorched-earth:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "1"
     mem_limit: 10g
     environment:
       SERVER_MAP: ScorchedEarth_P
@@ -41,8 +40,8 @@ services:
       QUERY_PORT: 27115
       RCON_PORT: 27120
       CLUSTER_ID: dev_arkcluster
-      SERVER_PASSWORD: NotAPassword
-      ADMIN_PASSWORD: xxYY12345
+      SERVER_PASSWORD: NotAPassword # CHANGE THIS PASSWORD
+      ADMIN_PASSWORD: xxYY12345 # CHANGE THIS PASSWORD
       GAME_MOD_IDS: ""
     ports:
       - "7787:7787/udp"
@@ -58,7 +57,6 @@ services:
   aberration:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "2"
     mem_limit: 10g
     environment:
       SERVER_MAP: Aberration_P
@@ -68,8 +66,8 @@ services:
       QUERY_PORT: 27215
       RCON_PORT: 27220
       CLUSTER_ID: dev_arkcluster
-      SERVER_PASSWORD: NotAPassword
-      ADMIN_PASSWORD: xxYY12345
+      SERVER_PASSWORD: NotAPassword # CHANGE THIS PASSWORD
+      ADMIN_PASSWORD: xxYY12345 # CHANGE THIS PASSWORD
       GAME_MOD_IDS: ""
     ports:
       - "7797:7797/udp"
@@ -85,7 +83,6 @@ services:
   extinction:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "3"
     mem_limit: 10g
     environment:
       SERVER_MAP: Extinction
@@ -112,7 +109,6 @@ services:
   ragnarok:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "4"
     mem_limit: 10g
     environment:
       SERVER_MAP: Ragnarok
@@ -139,7 +135,6 @@ services:
   valguero:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "5"
     mem_limit: 10g
     environment:
       SERVER_MAP: Valguero_P
@@ -166,7 +161,6 @@ services:
   crystal:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "6"
     mem_limit: 10g
     environment:
       SERVER_MAP: CrystalIsles
@@ -193,7 +187,6 @@ services:
   lost-island:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "7"
     mem_limit: 10g
     environment:
       SERVER_MAP: LostIsland
@@ -220,7 +213,6 @@ services:
   fjordur:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "8"
     mem_limit: 10g
     environment:
       SERVER_MAP: Fjordur
@@ -247,7 +239,6 @@ services:
   genesis-1:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "9"
     mem_limit: 10g
     environment:
       SERVER_MAP: Genesis
@@ -274,7 +265,6 @@ services:
   genesis-2:
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
-    cpuset: "10"
     mem_limit: 10g
     environment:
       SERVER_MAP: Gen2

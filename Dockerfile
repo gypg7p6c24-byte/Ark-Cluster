@@ -26,7 +26,7 @@ RUN dpkg --add-architecture i386 \
 USER steam
 WORKDIR /home/steam
 
-# Official SteamCMD Valve + integirty checking
+# Official SteamCMD Valve + integrity checking
 RUN mkdir -p steamcmd && \
     curl -sSL -o steamcmd_linux.tar.gz \
       https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \

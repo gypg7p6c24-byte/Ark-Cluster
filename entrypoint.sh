@@ -18,7 +18,7 @@ SERVER_BIN="${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer"
 echo "[ARK] Checking server installation..."
 
 if [ ! -f "$SERVER_BIN" ]; then
-  echo "[ARK] Server not found, installing via SteamCMD..."
+  echo "[ARK] Installing via SteamCMD..."
 
   mkdir -p "$ARK_DIR"
 
@@ -37,7 +37,7 @@ CLUSTER_DIR="${SAVE_DIR}/clusters/"
 
 mkdir -p "${CLUSTER_DIR}"
 
-# Construction options serveur
+# ServerL aunching Script
 ARGS=(
   "${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}?MaxPlayers=${MAX_PLAYERS}"
 )
@@ -55,7 +55,7 @@ ARGS+=(
   "-servergamelogincludetribelogs"
 )
 
-# Réseau
+# Network
 ARGS+=(
   "-Port=${GAME_PORT}"
   "-QueryPort=${QUERY_PORT}"
