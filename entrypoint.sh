@@ -13,7 +13,7 @@ set -e
 : "${CLUSTER_ID:?Missing CLUSTER_ID}"
 
 ARK_DIR="/ark"
-SERVER_BIN="${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer"
+SERVER_BIN="/ark/ShooterGame/Binaries/Linux/ShooterGameServer"
 STEAMCMD="${STEAMCMD:-/home/steam/steamcmd/steamcmd.sh}"
 
 echo "[ARK] Checking server installation..."
