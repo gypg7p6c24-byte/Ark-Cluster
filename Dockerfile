@@ -41,8 +41,10 @@ RUN chmod +x /entrypoint.sh /backup.sh
 
 VOLUME ["/ark", "/backups"]
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=2m --retries=3 \
-  CMD pgrep ShooterGameServer >/dev/null || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5m --retries=3 \
+  CMD [ -f /ark/ShooterGame/Binaries/Linux/ShooterGameServer ] || exit 0 && \
+      pgrep ShooterGameServer >/dev/null || exit 1
+
 
 STOPSIGNAL SIGTERM
 
