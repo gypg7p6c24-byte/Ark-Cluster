@@ -35,7 +35,7 @@ fi
 
 
 SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
-CLUSTER_DIR="${SAVE_DIR}/clusters/"
+CLUSTER_DIR="/clusters/"
 echo "[ARK] Creating cluster repository"
 mkdir -p "${CLUSTER_DIR}"
 echo "[ARK] Cluster repository created"
