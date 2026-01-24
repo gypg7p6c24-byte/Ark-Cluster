@@ -22,7 +22,7 @@ if [ ! -f "$SERVER_BIN" ]; then
 
   mkdir -p "$ARK_DIR"
 
-  "/usr/games/steamcmd" \
+  "$STEAMCMD" \
     +force_install_dir "$ARK_DIR" \
     +login anonymous \
     +app_update 376030 validate \
@@ -37,12 +37,12 @@ CLUSTER_DIR="${SAVE_DIR}/clusters/"
 
 mkdir -p "${CLUSTER_DIR}"
 
-# ServerL aunching Script
+# Server Launching Script
 ARGS=(
   "${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}?MaxPlayers=${MAX_PLAYERS}"
 )
 
-# Mods (optionnel)
+# Mods (optional)
 if [ -n "${GAME_MOD_IDS}" ]; then
   ARGS+=("?GameModIds=${GAME_MOD_IDS}")
 fi
@@ -64,8 +64,8 @@ ARGS+=(
 )
 
 
+echo "[ARK] Starting server..."
+"${SERVER_BIN}" "${ARGS[@]}" &
+ARK_PID=$!
 
-echo "[ARK] Launch command:"
-echo "${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer ${ARGS[*]}"
-
-exec "${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer" "${ARGS[@]}"
+wait "$ARK_PID"
