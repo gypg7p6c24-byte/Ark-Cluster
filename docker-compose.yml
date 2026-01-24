@@ -34,7 +34,7 @@ services:
     mem_limit: 10g
     environment:
       SERVER_MAP: ScorchedEarth_P
-      SESSION_NAME: ARK-Scorched
+      SESSION_NAME: DEV-Scorched-Earth
       MAX_PLAYERS: 3
       GAME_PORT: 7787
       QUERY_PORT: 27115
