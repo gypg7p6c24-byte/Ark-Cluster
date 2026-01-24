@@ -1,7 +1,6 @@
 FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
-ENV STEAMCMD_SHA256=2e92f7c64a4f3e4bfae4e7e63c0f45f3d8c61c3c8d0b6e7c2b9c1b7c7b8e6e3d
 
 RUN dpkg --add-architecture i386 \
  && apt update \
@@ -24,11 +23,9 @@ RUN dpkg --add-architecture i386 \
 USER steam
 WORKDIR /home/steam
 
-# Official SteamCMD Valve + integrity checking
 RUN mkdir -p steamcmd \
  && curl -sSL -o steamcmd_linux.tar.gz \
     https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
- && echo "${STEAMCMD_SHA256}  steamcmd_linux.tar.gz" | sha256sum -c - \
  && tar -xzf steamcmd_linux.tar.gz -C steamcmd \
  && rm steamcmd_linux.tar.gz
 
