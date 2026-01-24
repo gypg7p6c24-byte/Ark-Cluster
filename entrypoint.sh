@@ -24,7 +24,7 @@ echo "[ARK] Create Server repository"
   mkdir -p "$ARK_DIR"
 echo "[ARK] Repository created"
   "$STEAMCMD" \
-    +force_install_dir "$ARK_DIR" \
+    +force_install_dir /ark \
     +login anonymous \
     +app_update 376030 validate \
     +quit
