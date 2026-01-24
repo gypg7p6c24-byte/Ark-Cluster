@@ -39,9 +39,16 @@ CLUSTER_DIR="/clusters/"
 mkdir -p "${CLUSTER_DIR}"
 
 
-CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?MaxPlayers=${MAX_PLAYERS}?Port=${GAME_PORT}?QueryPort=${QUERY_PORT}?RCONPort=${RCON_PORT}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}"
+CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME} \
+?MaxPlayers=${MAX_PLAYERS} \
+?Port=${GAME_PORT} \
+?QueryPort=${QUERY_PORT} \
+?RCONPort=${RCON_PORT} \
+?ServerPassword=${SERVER_PASSWORD} \
+?ServerAdminPassword=${ADMIN_PASSWORD} \
+?ClusterId=${CLUSTER_ID}"
 
-echo "[ARK] Command: $SERVER_BIN $CMD -server -log"
+echo "[ARK] Command: $SERVER_BIN $CMD -server -log -clusterDirOverride=/clusters"
 
 exec "$SERVER_BIN" "$CMD" -server -log
 
