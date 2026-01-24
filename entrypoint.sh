@@ -14,6 +14,7 @@ set -e
 
 ARK_DIR="/ark"
 SERVER_BIN="${ARK_DIR}/ShooterGame/Binaries/Linux/ShooterGameServer"
+STEAMCMD="${STEAMCMD:-/home/steam/steamcmd/steamcmd.sh}"
 
 echo "[ARK] Checking server installation..."
 
