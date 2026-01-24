@@ -26,7 +26,7 @@ echo "[ARK] Repository created"
   "$STEAMCMD" \
     +force_install_dir /ark \
     +login anonymous \
-    +app_update 376030 validate \
+    +app_update 376030 \
     +quit
 echo "[ARK] Server installed"
 else
@@ -36,39 +36,12 @@ fi
 
 SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
 CLUSTER_DIR="/clusters/"
-echo "[ARK] Creating cluster repository"
 mkdir -p "${CLUSTER_DIR}"
-echo "[ARK] Cluster repository created"
-echo "[ARK] Initializing arguments server"
-# Server Launching Script
-ARGS=(
-  "${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}?MaxPlayers=${MAX_PLAYERS}"
-)
-echo "[ARK] Map, session, password, adm password and max player configurated"
-# Mods (optional)
-if [ -n "${GAME_MOD_IDS}" ]; then
-  ARGS+=("?GameModIds=${GAME_MOD_IDS}")
-fi
-echo "[ARK] Logs configurated"
-# Logs
-ARGS+=(
-  "-server"
-  "-log"
-  "-servergamelog"
-  "-servergamelogincludetribelogs"
-)
-echo "[ARK] Network configurated"
-# Network
-ARGS+=(
-  "-Port=${GAME_PORT}"
-  "-QueryPort=${QUERY_PORT}"
-  "-RCONPort=${RCON_PORT}"
-  "-ClusterDirOverride=${CLUSTER_DIR}"
-)
 
 
-echo "[ARK] Starting server..."
-"${SERVER_BIN}" "${ARGS[@]}" &
-ARK_PID=$!
-echo "[ARK] Server Up"
-wait "$ARK_PID"
+CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?MaxPlayers=${MAX_PLAYERS}?Port=${GAME_PORT}?QueryPort=${QUERY_PORT}?RCONPort=${RCON_PORT}?ServerPassword=${SERVER_PASSWORD}?ServerAdminPassword=${ADMIN_PASSWORD}"
+
+echo "[ARK] Command: $SERVER_BIN $CMD -server -log"
+
+exec "$SERVER_BIN" "$CMD" -server -log
+
