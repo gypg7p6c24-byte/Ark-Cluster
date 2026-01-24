@@ -39,7 +39,7 @@ COPY --chown=steam:steam entrypoint.sh /entrypoint.sh
 COPY --chown=steam:steam backup.sh /backup.sh
 RUN chmod +x /entrypoint.sh /backup.sh
 
-VOLUME ["/ark", , "/backups"]
+VOLUME ["/ark", "/backups"]
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=2m --retries=3 \
   CMD pgrep ShooterGameServer >/dev/null || exit 1
