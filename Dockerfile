@@ -25,12 +25,13 @@ USER steam
 WORKDIR /home/steam
 
 # Official SteamCMD Valve + integrity checking
-RUN mkdir -p steamcmd && \
-    curl -sSL -o steamcmd_linux.tar.gz \
-      https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz && \
-    echo "${STEAMCMD_SHA256}  steamcmd_linux.tar.gz" | sha256sum -c - &&\
-    tar -xzf steamcmd -f steamcmd_linux.tar.gz -C && \
-    rm steamcmd_linux.tar.gz
+RUN mkdir -p steamcmd \
+ && curl -sSL -o steamcmd_linux.tar.gz \
+    https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
+ && echo "${STEAMCMD_SHA256}  steamcmd_linux.tar.gz" | sha256sum -c - \
+ && tar -xzf steamcmd_linux.tar.gz -C steamcmd \
+ && rm steamcmd_linux.tar.gz
+
 
 
 ENV STEAMCMD=/home/steam/steamcmd/steamcmd.sh
