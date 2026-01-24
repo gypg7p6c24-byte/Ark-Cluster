@@ -24,7 +24,7 @@ services:
     volumes:
       - dev_ark_theisland_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
 
@@ -51,10 +51,11 @@ services:
     volumes:
       - dev_ark_scorched_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   aberration:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -77,10 +78,11 @@ services:
     volumes:
       - dev_ark_aberration_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   extinction:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -103,10 +105,11 @@ services:
     volumes:
       - dev_ark_extinction_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   ragnarok:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -129,10 +132,11 @@ services:
     volumes:
       - dev_ark_ragnarok_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   valguero:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -155,10 +159,11 @@ services:
     volumes:
       - dev_ark_valguero_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   crystal:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -181,10 +186,11 @@ services:
     volumes:
       - dev_ark_crystal_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   lost-island:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -207,10 +213,11 @@ services:
     volumes:
       - dev_ark_lostisland_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   fjordur:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -233,10 +240,11 @@ services:
     volumes:
       - dev_ark_fjordur_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   genesis-1:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -259,10 +267,11 @@ services:
     volumes:
       - dev_ark_gen1_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
   genesis-2:
+    profiles: [disable]
     image: pyrr0/ark-ase-cluster:latest
     cpus: "1.0"
     mem_limit: 10g
@@ -285,7 +294,7 @@ services:
     volumes:
       - dev_ark_gen2_data:/ark
       - dev_ark_cluster_data:/arkcluster
-      - dev_ark_backups:/backups
+      - dev_ark_backups:/ark/ShooterGame/Saved/clusters
     restart: unless-stopped
 
 volumes:

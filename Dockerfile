@@ -16,8 +16,8 @@ RUN dpkg --add-architecture i386 \
     procps \
     rsync \
  && useradd -m steam \
- && mkdir -p /ark /arkcluster /backups \
- && chown -R steam:steam /ark /arkcluster /backups \
+ && mkdir -p /ark /backups \
+ && chown -R steam:steam /ark /backups \
  && apt clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -41,7 +41,7 @@ COPY --chown=steam:steam entrypoint.sh /entrypoint.sh
 COPY --chown=steam:steam backup.sh /backup.sh
 RUN chmod +x /entrypoint.sh /backup.sh
 
-VOLUME ["/ark", "/arkcluster", "/backups"]
+VOLUME ["/ark", , "/backups"]
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=2m --retries=3 \
   CMD pgrep ShooterGameServer >/dev/null || exit 1
