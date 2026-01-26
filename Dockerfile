@@ -13,8 +13,8 @@ RUN dpkg --add-architecture i386 \
     procps \
     rsync \
  && useradd -m steam \
- && mkdir -p /ark /cluster /backups \
- && chown -R steam:steam /ark /arkcluster /backups \
+ && mkdir -p /ark /clusters /backups \
+ && chown -R steam:steam /ark /clusters /backups \
  && apt clean \
  && rm -rf /var/lib/apt/lists/*
 
