@@ -29,12 +29,6 @@ RUN mkdir -p steamcmd \
  && tar -xzf steamcmd_linux.tar.gz -C steamcmd \
  && rm steamcmd_linux.tar.gz
 
-
-
-ENV STEAMCMD=/home/steam/steamcmd/steamcmd.sh
-ENV ARK_DIR=/ark
-ENV ARK_BIN=/ark/ShooterGame/Binaries/Linux/ShooterGameServer
-
 COPY --chown=steam:steam entrypoint.sh /entrypoint.sh
 COPY --chown=steam:steam backup.sh /backup.sh
 RUN chmod +x /entrypoint.sh /backup.sh
