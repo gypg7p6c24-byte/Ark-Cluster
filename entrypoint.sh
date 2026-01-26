@@ -41,7 +41,7 @@ CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME} \
 ?ClusterId=${CLUSTER_ID} \
 -clusterDirOverride=/clusters"
 
-echo "[ARK] Command: $SERVER_BIN $CMD -server -log -clusterDirOverride=/clusters"
+echo "[ARK] Command: $SERVER_BIN $CMD -server -log"
 
 exec "$SERVER_BIN" "$CMD" -server -log
 
