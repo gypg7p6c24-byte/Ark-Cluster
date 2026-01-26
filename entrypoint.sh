@@ -1,5 +1,5 @@
 #!/bin/bash
-set -Eeuo pipefail
+set -e
 
 # Variables obligatoires
 : "${SERVER_MAP:?Missing SERVER_MAP}"
