@@ -31,15 +31,20 @@ fi
 
 CLUSTER_DIR="/clusters/"
 
-CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME} \
-?MaxPlayers=${MAX_PLAYERS} \
-?Port=${GAME_PORT} \
-?QueryPort=${QUERY_PORT} \
-?RCONPort=${RCON_PORT} \
-?ServerPassword=${SERVER_PASSWORD} \
-?ServerAdminPassword=${ADMIN_PASSWORD} \
-?ClusterId=${CLUSTER_ID} \
--clusterDirOverride=/clusters"
+CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME}?MaxPlayers=${MAX_PLAYERS}"
+
+# --- Network (FLAGS, pas URL) ---
+CMD+=" -Port=${GAME_PORT}"
+CMD+=" -QueryPort=${QUERY_PORT}"
+CMD+=" -RCONPort=${RCON_PORT}"
+
+# --- Security (FLAGS, CRUCIAL) ---
+CMD+=" -ServerPassword=${SERVER_PASSWORD}"
+CMD+=" -ServerAdminPassword=${ADMIN_PASSWORD}"
+
+# --- Cluster ---
+CMD+=" -ClusterId=${CLUSTER_ID}"
+CMD+=" -clusterDirOverride=/clusters"
 
 echo "[ARK] Command: $SERVER_BIN $CMD -server -log"
 
