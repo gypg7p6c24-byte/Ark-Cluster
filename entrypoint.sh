@@ -19,7 +19,6 @@ STEAMCMD="/home/steam/steamcmd/steamcmd.sh"
 echo "[ARK] Checking server installation..."
 
 if [ ! -f "$SERVER_BIN" ]; then
-  mkdir -p "$ARK_DIR"
   "$STEAMCMD" \
     +force_install_dir /ark \
     +login anonymous \
@@ -27,14 +26,10 @@ if [ ! -f "$SERVER_BIN" ]; then
     +quit
 echo "[ARK] Server installed"
 else
-  echo "[ARK] Server already installed"
+echo "[ARK] Server already installed"
 fi
 
-
-SAVE_DIR="${ARK_DIR}/ShooterGame/Saved"
 CLUSTER_DIR="/clusters/"
-mkdir -p "${CLUSTER_DIR}"
-
 
 CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME} \
 ?MaxPlayers=${MAX_PLAYERS} \
@@ -43,7 +38,8 @@ CMD="${SERVER_MAP}?listen?SessionName=${SESSION_NAME} \
 ?RCONPort=${RCON_PORT} \
 ?ServerPassword=${SERVER_PASSWORD} \
 ?ServerAdminPassword=${ADMIN_PASSWORD} \
-?ClusterId=${CLUSTER_ID}"
+?ClusterId=${CLUSTER_ID} \
+-clusterDirOverride=/clusters"
 
 echo "[ARK] Command: $SERVER_BIN $CMD -server -log -clusterDirOverride=/clusters"
 
