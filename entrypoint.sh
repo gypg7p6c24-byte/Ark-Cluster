@@ -14,15 +14,12 @@ set -e
 
 ARK_DIR="/ark"
 SERVER_BIN="/ark/ShooterGame/Binaries/Linux/ShooterGameServer"
-STEAMCMD="${STEAMCMD:-/home/steam/steamcmd/steamcmd.sh}"
+STEAMCMD="/home/steam/steamcmd/steamcmd.sh"
 
 echo "[ARK] Checking server installation..."
 
 if [ ! -f "$SERVER_BIN" ]; then
-  echo "[ARK] Installing via SteamCMD..."
-echo "[ARK] Create Server repository"
   mkdir -p "$ARK_DIR"
-echo "[ARK] Repository created"
   "$STEAMCMD" \
     +force_install_dir /ark \
     +login anonymous \
