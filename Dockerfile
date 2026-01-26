@@ -31,6 +31,6 @@ COPY --chown=steam:steam entrypoint.sh /entrypoint.sh
 COPY --chown=steam:steam backup.sh /backup.sh
 RUN chmod +x /entrypoint.sh /backup.sh
 
-VOLUME ["/ark", "/arkcluster", "/backups"]
+VOLUME ["/ark", "/clusters", "/backups"]
 
 ENTRYPOINT ["/entrypoint.sh"]
